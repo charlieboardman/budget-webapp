@@ -11,7 +11,7 @@ with open('transactions.csv', 'rb') as f:
     pos = 0
     f.seek(0,2) #Put the cursor at the end of the file
     
-    while len([x for x in display_lines if x.split(',')[0] != 'daily_allowance']) < 10 and f.tell() != 0:
+    while len([x for x in loaded_lines if x.split(',')[0] != 'daily_allowance']) < 10 and f.tell() != 0:
     
         #Read lines, starting from the end
         char = f.read(1) #Read one character at the position of the cursor
