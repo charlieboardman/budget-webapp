@@ -34,14 +34,14 @@ TO DO
     <form action="" method="post">
         <label for="arguement">Enter Argument:</label>
         <input type="text" name="argument" id="arguement">
-        <input type="submit" name="runPHP" value="Run PHP Code">
+        <input type="submit" name="enter_transaction" value="Enter Transaction">
     </form>
 
     <?php
 
-	if (isset($_POST['runPHP'])) {
+	if (isset($_POST['enter_transaction'])) {
                 $argument = escapeshellarg($_POST['argument']);
-                passthru('python3 helloworld.py ' . $argument);
+                passthru('python3 addtransaction.py ' . $argument);
         }
     ?>
 </body>

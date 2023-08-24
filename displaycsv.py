@@ -34,7 +34,7 @@ with open('transactions.csv', 'rb') as f:
         vendor = row[0]
         pennies = float(row[1]) * 100
         dollars = "{:.2f}".format(pennies/100)
-        total_pennies = float(row[2] * 200)
+        total_pennies = float(row[2]) * 100
         total = "{:.2f}".format(total_pennies/100)
         
         #print(f"{vendor}, ${dollars}" + '<br>') #Use this for no table
