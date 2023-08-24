@@ -24,9 +24,9 @@ TO DO
     </p>
 
     <!-- Display current balance -->
-    <p>Your current balance:
+    <p>Your current balance: $
     <?php
-        passthru('python displaybalance.py')
+        passthru('cat total.txt')
     ?>
     </p>
 
