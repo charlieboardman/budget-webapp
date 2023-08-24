@@ -1,7 +1,7 @@
 import csv
 from collections import deque
 
-display_lines = [] #The lines that will be displayed are appended to this list during the course of the script
+loaded_lines = [] #The lines that will be displayed are appended to this list during the course of the script
 
 #Start the table
 print("<table border='1' cellspacing='0' cellpadding='5'>")
