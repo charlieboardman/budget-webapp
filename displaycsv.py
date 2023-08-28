@@ -56,5 +56,5 @@ with open('transactions.csv', 'rb') as f:
         print("</tr>")
 
     #End the table
-    print("</table>")
+print("</table>")
         

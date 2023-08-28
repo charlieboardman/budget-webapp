@@ -32,16 +32,31 @@ TO DO
 
     <!-- Enter a transaction -->
     <form action="" method="post">
-        <label for="arguement">Enter Argument:</label>
-        <input type="text" name="argument" id="arguement">
-        <input type="submit" name="enter_transaction" value="Enter Transaction">
+        <p>
+            <label for="cost">Enter transaction cost:</label>
+            <input type="text" name="cost" id="cost" placeholder="Enter cost">
+        </p>
+
+        <p>
+            <label for="vendor">Enter vendor name:</label>
+            <input type="text" name="vendor" id="vendor" placeholder="Enter vendor name">
+        </p>
+
+        <p>
+            <button type="submit" name="submit_transaction" value="Submit Transaction">Submit</button>
+        </p>
     </form>
 
     <?php
 
-	if (isset($_POST['enter_transaction'])) {
-                $argument = escapeshellarg($_POST['argument']);
-                passthru('python3 addtransaction.py ' . $argument);
+	if (isset($_POST['submit_transaction'])) {
+                $cost = escapeshellarg($_POST['cost']);
+                $vendor = escapeshellarg($_POST['vendor']);
+                $output = shell_exec('sudo python3 addtransaction.py ' . $cost . ' ' . $vendor);
+                file_put_contents('/var/www/html/command_output.log', $output, FILE_APPEND);
+                //$new_total = file_get_contents('./transactions.csv', FALSE, null,)
+                //$new_transaction = $vendor . ',' . $cost . ',' . 
+                //file_put_contents('transactions.csv', )
         }
     ?>
 </body>
